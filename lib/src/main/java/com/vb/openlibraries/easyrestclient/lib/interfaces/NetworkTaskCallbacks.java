@@ -16,11 +16,17 @@
 
 package com.vb.openlibraries.easyrestclient.lib.interfaces;
 
-import com.vb.openlibraries.easyrestclient.lib.services.WebService;
+import com.squareup.okhttp.Response;
+import com.vb.openlibraries.easyrestclient.lib.services.NetworkTask;
 
-/**
- * TODO: Add description
- */
-public interface WebServiceCallbacks {
-    public void onWebServiceFinishWithSuccess(WebService ws);
+public interface NetworkTaskCallbacks {
+    public void onNetworkTaskStartAsyncWork(NetworkTask caller);
+
+    public void onNetworkTaskFinishAsyncWork(NetworkTask caller, Response response);
+
+    public void onNetworkTaskFinishWithSuccess(NetworkTask caller, Response response);
+
+    public void onNetworkTaskFinishWithException(NetworkTask caller, Exception exception);
+
 }
+

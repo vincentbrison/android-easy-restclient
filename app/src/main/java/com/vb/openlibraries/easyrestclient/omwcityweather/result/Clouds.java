@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-package com.vb.openlibraries.easyrestclient.lib.interfaces;
-
-import com.vb.openlibraries.easyrestclient.lib.services.WebService;
+package com.vb.openlibraries.easyrestclient.omwcityweather.result;
 
 /**
- * TODO: Add description
+ * TODO: Add a class header comment!
  */
-public interface WebServiceCallbacks {
-    public void onWebServiceFinishWithSuccess(WebService ws);
+public class Clouds {
+    int all;
 }

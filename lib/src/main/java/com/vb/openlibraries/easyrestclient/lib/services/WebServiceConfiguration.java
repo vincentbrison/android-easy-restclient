@@ -14,13 +14,20 @@
  * limitations under the License.
  */
 
-package com.vb.openlibraries.easyrestclient.lib.interfaces;
+package com.vb.openlibraries.easyrestclient.lib.services;
 
-import com.vb.openlibraries.easyrestclient.lib.services.WebService;
+import java.util.Map;
 
 /**
- * TODO: Add description
+ * TODO: Add a class header comment!
  */
-public interface WebServiceCallbacks {
-    public void onWebServiceFinishWithSuccess(WebService ws);
+public abstract class WebServiceConfiguration {
+
+    public enum Protocol {HTTP, HTTPS}
+
+    public abstract String getBaseURL();
+    public abstract String getPathURL();
+    public abstract int getPort();
+    public abstract Protocol getProtocol();
+
 }

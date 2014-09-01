@@ -14,13 +14,27 @@
  * limitations under the License.
  */
 
-package com.vb.openlibraries.easyrestclient.lib.interfaces;
-
-import com.vb.openlibraries.easyrestclient.lib.services.WebService;
+package com.vb.openlibraries.easyrestclient.lib.services;
 
 /**
- * TODO: Add description
+ * TODO: Add a class header comment!
  */
-public interface WebServiceCallbacks {
-    public void onWebServiceFinishWithSuccess(WebService ws);
+public abstract class WebServiceWithBody extends WebService {
+    public enum ContentType {
+
+        TEXT_PLAIN("text/plain"),
+        APPLICATION_X_WWW_FORM_URLENCODED("application/x-www-form-urlencoded"),
+        APPLICATION_JSON("application/json");
+
+        private final String mName;
+
+        private ContentType(String s) {
+            mName = s;
+        }
+
+        @Override
+        public String toString() {
+            return mName;
+        }
+    }
 }

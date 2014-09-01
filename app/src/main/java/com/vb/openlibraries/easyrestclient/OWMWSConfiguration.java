@@ -14,13 +14,31 @@
  * limitations under the License.
  */
 
-package com.vb.openlibraries.easyrestclient.lib.interfaces;
+package com.vb.openlibraries.easyrestclient;
 
-import com.vb.openlibraries.easyrestclient.lib.services.WebService;
+import com.vb.openlibraries.easyrestclient.lib.services.WebServiceConfiguration;
 
 /**
- * TODO: Add description
+ * TODO: Add a class header comment!
  */
-public interface WebServiceCallbacks {
-    public void onWebServiceFinishWithSuccess(WebService ws);
+public class OWMWSConfiguration extends WebServiceConfiguration {
+    @Override
+    public String getBaseURL() {
+        return "api.openweathermap.org";
+    }
+
+    @Override
+    public String getPathURL() {
+        return "/data/2.5/weather";
+    }
+
+    @Override
+    public int getPort() {
+        return 80;
+    }
+
+    @Override
+    public Protocol getProtocol() {
+        return Protocol.HTTP;
+    }
 }
